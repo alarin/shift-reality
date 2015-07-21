@@ -1,5 +1,4 @@
 import Foundation
-import GPUImage
 
 enum FilterSliderSetting {
     case Disabled

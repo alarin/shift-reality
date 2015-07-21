@@ -1,5 +1,4 @@
 import Foundation
-import GPUImage
 import QuartzCore
 
 #if os(iOS)

@@ -1,5 +1,5 @@
 import UIKit
-import GPUImage
+
 
 class FilterDisplayViewController: UIViewController, UISplitViewControllerDelegate {
 

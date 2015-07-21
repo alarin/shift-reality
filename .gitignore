@@ -1,5 +1,9 @@
 # Xcode
 #
+.DS_Store
+Pods
+Podfile.lock
+DerivedData
 build/
 *.pbxuser
 !default.pbxuser
