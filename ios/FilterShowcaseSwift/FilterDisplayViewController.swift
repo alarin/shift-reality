@@ -16,7 +16,9 @@ class FilterDisplayViewController: UIViewController, UISplitViewControllerDelega
   
     required init(coder aDecoder: NSCoder)
     {
-        videoCamera = GPUImageVideoCamera(sessionPreset: AVCaptureSessionPreset640x480, cameraPosition: .Back)
+//        videoCamera = GPUImageVideoCamera(sessionPreset: AVCaptureSessionPreset640x480, cameraPosition: .Back)
+      videoCamera = GPUImageVideoCamera(sessionPreset: AVCaptureSessionPreset1280x720, cameraPosition: .Back)  
+//      videoCamera = GPUImageVideoCamera(sessionPreset: AVCaptureSessionPreset1920x1080, cameraPosition: .Back)
         videoCamera.outputImageOrientation = .Portrait;
 
         super.init(coder: aDecoder)
@@ -96,8 +98,10 @@ class FilterDisplayViewController: UIViewController, UISplitViewControllerDelega
       let frame = view.layer.frame
       self.filterViewLeft = GPUImageView(frame: CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.width, height: frame.height/2))
       self.filterViewLeft!.fillMode = kGPUImageFillModePreserveAspectRatioAndFill
+      self.filterViewLeft!.fillMode =      kGPUImageFillModeStretch
       self.filterViewRight = GPUImageView(frame: CGRect(x: frame.origin.x, y: frame.origin.y + frame.height/2, width: frame.width, height: frame.height/2))
       self.filterViewRight!.fillMode = kGPUImageFillModePreserveAspectRatioAndFill
+      self.filterViewRight!.fillMode =      kGPUImageFillModeStretch
       self.filterView!.addSubview(self.filterViewLeft!)
       self.filterView!.addSubview(self.filterViewRight!)
       self.filterView!.addSubview(self.filterSlider!)

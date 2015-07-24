@@ -8,6 +8,71 @@ import OpenGL
 #endif
     
 let filterOperations: Array<FilterOperationInterface> = [
+  FilterOperation <RandomHue>(
+    listName:"Random Hue",
+    titleName:"Random Hue",
+    sliderConfiguration:.Enabled(minimumValue:0.0, maximumValue:360.0, initialValue:90.0),
+    sliderUpdateCallback: {(filter, sliderValue) in
+      filter.hue = sliderValue
+    },
+    filterOperationType:.SingleInput
+  ),
+  FilterOperation <TonyFilter>(
+    listName:"Black XY Filter",
+    titleName:"Black XY Filter",
+    sliderConfiguration:.Enabled(minimumValue:1.0, maximumValue:5.0, initialValue:3.0),
+    sliderUpdateCallback: {(filter, sliderValue) in
+      filter.edgeStrength = sliderValue
+    },
+    filterOperationType:.SingleInput
+  ),
+  FilterOperation <GPUImageXYDerivativeFilter>(
+    listName:"XY derivative",
+    titleName:"XY Derivative",
+    sliderConfiguration:.Enabled(minimumValue:1.0, maximumValue:5.0, initialValue:3.0),
+    sliderUpdateCallback: {(filter, sliderValue) in
+      filter.edgeStrength = sliderValue
+    },
+    filterOperationType:.SingleInput
+  ),
+  FilterOperation <GPUImageLowPassFilter>(
+    listName:"Low pass",
+    titleName:"Low Pass",
+    sliderConfiguration:.Enabled(minimumValue:0.0, maximumValue:1.0, initialValue:0.5),
+    sliderUpdateCallback: {(filter, sliderValue) in
+      filter.filterStrength = sliderValue
+    },
+    filterOperationType:.SingleInput
+  ),
+  FilterOperation <GPUImageHighPassFilter>(
+    listName:"High pass",
+    titleName:"High Pass",
+    sliderConfiguration:.Enabled(minimumValue:0.0, maximumValue:1.0, initialValue:0.5),
+    sliderUpdateCallback: {(filter, sliderValue) in
+      filter.filterStrength = sliderValue
+    },
+    filterOperationType:.SingleInput
+  ),
+  FilterOperation <RandomSwirlFilter>(
+    listName:"Random Swirl",
+    titleName:"Random Swirl",
+    sliderConfiguration:.Enabled(minimumValue:0.0, maximumValue:1.0, initialValue:0.1),
+    sliderUpdateCallback: {(filter, sliderValue) in
+      filter.angle = sliderValue
+    },
+    filterOperationType:.SingleInput
+  ),
+
+  FilterOperation <GPUImageSwirlFilter>(
+    listName:"Swirl",
+    titleName:"Swirl",
+    sliderConfiguration:.Enabled(minimumValue:0.0, maximumValue:2.0, initialValue:1.0),
+    sliderUpdateCallback: {(filter, sliderValue) in
+      filter.angle = sliderValue
+    },
+    filterOperationType:.SingleInput
+  ),
+  
     FilterOperation <GPUImageSaturationFilter>(
         listName:"Saturation",
         titleName:"Saturation",
@@ -441,13 +506,6 @@ let filterOperations: Array<FilterOperationInterface> = [
         },
         filterOperationType:.SingleInput
     ),
-    FilterOperation <GPUImageXYDerivativeFilter>(
-        listName:"XY derivative",
-        titleName:"XY Derivative",
-        sliderConfiguration:.Disabled,
-        sliderUpdateCallback: nil,
-        filterOperationType:.SingleInput
-    ),
     FilterOperation <GPUImageHarrisCornerDetectionFilter>(
         listName:"Harris corner detector",
         titleName:"Harris Corner Detector",
@@ -594,24 +652,6 @@ let filterOperations: Array<FilterOperationInterface> = [
             blendFilter.addTarget(outputView)
             return (filter, nil)
         })
-    ),
-    FilterOperation <GPUImageLowPassFilter>(
-        listName:"Low pass",
-        titleName:"Low Pass",
-        sliderConfiguration:.Enabled(minimumValue:0.0, maximumValue:1.0, initialValue:0.5),
-        sliderUpdateCallback: {(filter, sliderValue) in
-            filter.filterStrength = sliderValue
-        },
-        filterOperationType:.SingleInput
-    ),
-    FilterOperation <GPUImageHighPassFilter>(
-        listName:"High pass",
-        titleName:"High Pass",
-        sliderConfiguration:.Enabled(minimumValue:0.0, maximumValue:1.0, initialValue:0.5),
-        sliderUpdateCallback: {(filter, sliderValue) in
-            filter.filterStrength = sliderValue
-        },
-        filterOperationType:.SingleInput
     ),
 
 //    GPUIMAGE_MOTIONDETECTOR,
@@ -834,15 +874,6 @@ let filterOperations: Array<FilterOperationInterface> = [
 
 //    GPUIMAGE_IOSBLUR,
 
-    FilterOperation <GPUImageSwirlFilter>(
-        listName:"Swirl",
-        titleName:"Swirl",
-        sliderConfiguration:.Enabled(minimumValue:0.0, maximumValue:2.0, initialValue:1.0),
-        sliderUpdateCallback: {(filter, sliderValue) in
-            filter.angle = sliderValue
-        },
-        filterOperationType:.SingleInput
-    ),
     FilterOperation <GPUImageBulgeDistortionFilter>(
         listName:"Bulge",
         titleName:"Bulge",

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		46ACD4BF260DB5E039F58929 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92296836499D9F39432F9185 /* libPods.a */; };
+		73B86AC91B616A0600CB3EE1 /* TonyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B86AC81B616A0600CB3EE1 /* TonyFilter.m */; };
+		73B86ACC1B6176C700CB3EE1 /* RandomHue.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B86ACB1B6176C700CB3EE1 /* RandomHue.m */; };
+		73B86ACF1B61852B00CB3EE1 /* RandomSwirlFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B86ACE1B61852B00CB3EE1 /* RandomSwirlFilter.m */; };
 		73EFD6501B5E71240010E28A /* curvies.png in Resources */ = {isa = PBXBuildFile; fileRef = 73EFD64B1B5E71240010E28A /* curvies.png */; };
 		73EFD6511B5E71240010E28A /* dotletterstiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 73EFD64C1B5E71240010E28A /* dotletterstiles.png */; };
 		73EFD6521B5E71240010E28A /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 73EFD64D1B5E71240010E28A /* mask.png */; };
@@ -38,6 +41,12 @@
 		3A7CE715F58AB82FE7E5AFE8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		70BA4857D0CDEFAAFB3E37EB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		73AA44D51B5E5EFC00B88988 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		73B86AC71B616A0600CB3EE1 /* TonyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TonyFilter.h; sourceTree = "<group>"; };
+		73B86AC81B616A0600CB3EE1 /* TonyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TonyFilter.m; sourceTree = "<group>"; };
+		73B86ACA1B6176C700CB3EE1 /* RandomHue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomHue.h; sourceTree = "<group>"; };
+		73B86ACB1B6176C700CB3EE1 /* RandomHue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomHue.m; sourceTree = "<group>"; };
+		73B86ACD1B61852B00CB3EE1 /* RandomSwirlFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomSwirlFilter.h; sourceTree = "<group>"; };
+		73B86ACE1B61852B00CB3EE1 /* RandomSwirlFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomSwirlFilter.m; sourceTree = "<group>"; };
 		73EFD64B1B5E71240010E28A /* curvies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = curvies.png; path = imgs/curvies.png; sourceTree = "<group>"; };
 		73EFD64C1B5E71240010E28A /* dotletterstiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dotletterstiles.png; path = imgs/dotletterstiles.png; sourceTree = "<group>"; };
 		73EFD64D1B5E71240010E28A /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mask.png; path = imgs/mask.png; sourceTree = "<group>"; };
@@ -128,6 +137,12 @@
 			children = (
 				BC0037EE195CC9E200B9D651 /* FilterOperations.swift */,
 				BCA01890195E503E004BC89E /* FilterOperationTypes.swift */,
+				73B86AC71B616A0600CB3EE1 /* TonyFilter.h */,
+				73B86AC81B616A0600CB3EE1 /* TonyFilter.m */,
+				73B86ACA1B6176C700CB3EE1 /* RandomHue.h */,
+				73B86ACB1B6176C700CB3EE1 /* RandomHue.m */,
+				73B86ACD1B61852B00CB3EE1 /* RandomSwirlFilter.h */,
+				73B86ACE1B61852B00CB3EE1 /* RandomSwirlFilter.m */,
 			);
 			name = "Data model";
 			path = FilterShowcaseSwift;
@@ -254,8 +269,11 @@
 			files = (
 				BC0037C1195CA11B00B9D651 /* FilterDisplayViewController.swift in Sources */,
 				BC0037BF195CA11B00B9D651 /* FilterListViewController.swift in Sources */,
+				73B86ACC1B6176C700CB3EE1 /* RandomHue.m in Sources */,
 				BC0037BD195CA11B00B9D651 /* AppDelegate.swift in Sources */,
+				73B86AC91B616A0600CB3EE1 /* TonyFilter.m in Sources */,
 				BCA01891195E503E004BC89E /* FilterOperationTypes.swift in Sources */,
+				73B86ACF1B61852B00CB3EE1 /* RandomSwirlFilter.m in Sources */,
 				BC0037EF195CC9E200B9D651 /* FilterOperations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
